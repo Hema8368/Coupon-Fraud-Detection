@@ -7,7 +7,7 @@ pipeline {
   }
 
   environment {
-    DEPLOY_HOST = "3.236.28.238"
+    DEPLOY_HOST = "100.31.44.201 "
     DEPLOY_USER = "ubuntu"
     COMPOSE_PATH = "/home/ubuntu/coupon-fraud"
   }
