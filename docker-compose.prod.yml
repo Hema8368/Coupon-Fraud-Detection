@@ -1,0 +1,30 @@
+services:
+  api:
+    image: hsindhuja/cfd-api:${TAG}
+    ports:
+      - "5000:5000"
+    restart: always
+
+  ml:
+    image: hsindhuja/cfd-ml:${TAG}
+    ports:
+      - "8000:8000"
+    restart: always
+
+  admin:
+    image: hsindhuja/cfd-admin:${TAG}
+    ports:
+      - "8081:80"
+    restart: always
+    depends_on:
+      - api
+      - ml
+
+  checkout:
+    image: hsindhuja/cfd-checkout:${TAG}
+    ports:
+      - "8082:80"
+    restart: always
+    depends_on:
+      - api
+      - ml
